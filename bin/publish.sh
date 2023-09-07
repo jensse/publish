@@ -14,9 +14,8 @@ function installMark(){
 }
 
 function publishMd(){
-  mark --user ${{secrets.MARK_USER}} --password ${{secrets.MARK_PASS}} --base-url ${{secrets.MARK_URL}} -f src/test.md
+  bin/mark --user ${{secrets.MARK_USER}} --password ${{secrets.MARK_PASS}} -b ${{secrets.MARK_URL}} -f src/test.md
 }
-
 
 installMark ${marktag}
 summary ${marktag}
