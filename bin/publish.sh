@@ -13,6 +13,11 @@ function installMark(){
   chmod 755 bin/mark
 }
 
+function publishMd(){
+  mark --user ${{secret.MARK_USER}} --password ${{secret.MARK_PASS}} --base-url ${{secret.MARK_URL}} -f src/test.md
+}
+
+
 installMark ${marktag}
 summary ${marktag}
-
+publishMd
