@@ -9,7 +9,7 @@ function summary(){
 function installMark(){
   tag=${1}
   wget https://github.com/kovetskiy/mark/releases/download/${tag}/mark_Linux_x86_64.tar.gz
-  tar -xzvf filename.tar.gz -C bin/
+  tar -xzvf mark_Linux_x86_64.tar.gz -C bin/
   chmod 755 bin/mark
 }
 
