@@ -19,9 +19,9 @@ function installMark(){
 }
 
 function publishMd(){
-  bin/mark --dry-run --user ${{ secrets.MARK_USER }} --password ${{ secrets.MARK_PASS }} -b ${{ secrets.MARK_URL }} -f src/test.md
+  bin/mark --dry-run --user ${1} --password ${2} -b ${3} -f src/test.md
 }
 
 installMark ${marktag}
 summary ${marktag}
-publishMd $1 $2 $3
+publishMd ${MUSER} ${MPASS} ${MURL}
