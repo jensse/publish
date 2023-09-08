@@ -9,9 +9,13 @@ function summary(){
 
 function installMark(){
   tag=${1}
-  wget https://github.com/kovetskiy/mark/releases/download/${tag}/mark_Linux_x86_64.tar.gz
-  tar -xzvf mark_Linux_x86_64.tar.gz -C bin/
-  chmod 755 bin/mark
+  if [ -f "bin/mark"]l; then
+    echo "bin/mark, exist"
+  else
+    wget https://github.com/kovetskiy/mark/releases/download/${tag}/mark_Linux_x86_64.tar.gz
+    tar -xzvf mark_Linux_x86_64.tar.gz -C bin/
+    chmod 755 bin/mark
+  fi
 }
 
 function publishMd(){
@@ -20,4 +24,4 @@ function publishMd(){
 
 installMark ${marktag}
 summary ${marktag}
-publishMd
+publishMd $1 $2 $3
