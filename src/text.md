@@ -1,5 +1,5 @@
-<!-- Space: SA -->
-<!-- Parent: Arkitektur -->
+<!-- Space: ~923047560 -->
+<!-- Parent: pages -->
 <!-- Title: Test av publisering -->
 <!-- Layout: articles -->
 <!-- Label: herman  -->
