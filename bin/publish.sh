@@ -24,10 +24,10 @@ function installMark(){
 
 function publishMd(){
 
-  echo $(ls -al ${GITHUB_WORKSPACE} )
-  echo $(pwd)
-  echo $(env)
-  echo $(bin/mark --c .markfile -f ${GITHUB_WORKSPACE}/src/test.md)
+  echo "Tree: $(tree ${GITHUB_WORKSPACE} )"
+  echo "PWD: $(pwd)"
+  #echo $(env)
+  echo $(bin/mark --c .markfile -f ${GITHUB_WORKSPACE}/src/*.md)
 }
 
 installMark ${marktag}
