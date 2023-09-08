@@ -1,12 +1,13 @@
 <!-- Space: ~923047560 -->
-<!-- Title: Test av publisering -->
+<!-- Parent: Overview -->
+<!-- Title: Test av publisering (mark)-->
 <!-- Layout: articles -->
 <!-- Label: herman  -->
 <!-- Label: terry  -->
 <!-- Label: test  -->
 
-# Test av Mark
+# Test av publisering (mark)
 
 Litt ekstra tekst.
 Flytting til under Overview
-<!-- Parent: 3125641538 -->
+<!-- Parent: Overview -->
