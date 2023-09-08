@@ -17,6 +17,7 @@ env:
   MUSER: ${{secrets.MARK_USER }} 
   MPASS: ${{ secrets.MARK_PASS }}
   MURL: ${{ secrets.MARK_URL }}
+  MARKFILE: ${{ secrets.MARKFILE }}
   MARK_DEBUG: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
