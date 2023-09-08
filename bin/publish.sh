@@ -19,7 +19,7 @@ function installMark(){
 }
 
 function publishMd(){
-  bin/mark --dry-run --username ${1} --password ${2} -b ${3} -f src/test.md
+  bin/mark --dry-run --username ${1} --password ${2} -b "${3}" -f src/test.md
 }
 
 installMark ${marktag}
