@@ -22,7 +22,7 @@ function publishMd(){
   echo " ${MUSER}  ${MURL} direct vars"
   echo "$1 $3 passed as parameters" 
 
-  #bin/mark --debug --dry-run --username "${MUSER}" --password "${MPASS}" -b "${MURL}" -f src/test.md
+  echo $(bin/mark --debug --dry-run --username "${MUSER}" --password "${MPASS}" -b "${MURL}" -f src/test.md)
 }
 
 installMark ${marktag}
