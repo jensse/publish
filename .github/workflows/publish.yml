@@ -14,9 +14,9 @@ on:
   workflow_dispatch:
 
 env:
-  MUSER=${{secrets.MARK_USER }} 
-  MPASS=${{ secrets.MARK_PASS }}
-  MURL=${{ secrets.MARK_URL }}
+  MUSER: ${{secrets.MARK_USER }} 
+  MPASS: ${{ secrets.MARK_PASS }}
+  MURL: ${{ secrets.MARK_URL }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
