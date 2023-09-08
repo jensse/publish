@@ -4,6 +4,7 @@ marktag="9.9.0"
 function summary(){
   echo "Summary: installing mark version; ${1} testing..."
   echo $(bin/mark --version)
+  echo $(env)
 }
 
 function installMark(){
@@ -19,4 +20,4 @@ function publishMd(){
 
 installMark ${marktag}
 summary ${marktag}
-publishMd
+#publishMd
