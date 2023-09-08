@@ -32,4 +32,4 @@ function publishMd(){
 
 installMark ${marktag}
 summary ${marktag}
-publishMd ${MUSER} ${MPASS} ${MURL}
+publishMd
