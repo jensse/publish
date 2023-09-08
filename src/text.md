@@ -1,5 +1,5 @@
 <!-- Space: ~923047560 -->
-<!-- Parent: Overview -->
+<!-- Parent: Pages -->
 <!-- Title: Test av publisering -->
 <!-- Layout: articles -->
 <!-- Label: herman  -->
