@@ -1,10 +1,10 @@
 <!-- Space: ~923047560 -->
-<!-- Parent: Overview -->
-<!-- Title: Test av publisering (mark) -->
+<!-- Parent: Pages -->
+<!-- Title: Test av publisering -->
 <!-- Layout: articles -->
 <!-- Label: herman  -->
 <!-- Label: terry  -->
-<!-- Label: test  -->
+<!-- Label: mark  -->
 
 # Test av publisering (mark)
 
