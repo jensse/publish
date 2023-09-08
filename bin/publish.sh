@@ -4,7 +4,7 @@ marktag="9.9.0"
 function summary(){
   echo "Summary: installing mark version; ${1} testing..."
   echo $(bin/mark --version)
-  echo $(env)
+  # echo $(env)
 }
 
 function installMark(){
@@ -19,7 +19,10 @@ function installMark(){
 }
 
 function publishMd(){
-  bin/mark --dry-run --username ${1} --password ${2} -b "${3}" -f src/test.md
+  echo " ${MUSER}  ${MURL} direct vars"
+  echo "$1 $3 passed as parameters" 
+
+  #bin/mark --dry-run --username ${1} --password ${2} -b "${3}" -f src/test.md
 }
 
 installMark ${marktag}
