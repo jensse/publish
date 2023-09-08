@@ -25,7 +25,7 @@ function installMark(){
 function publishMd(){
   echo " ${MUSER}  ${MURL} direct vars"
   echo "$1 $3 passed as parameters" 
-
+  echo $(ls -al src/test.md )
   echo $(bin/mark --c .markfile -f src/test.md)
 }
 
