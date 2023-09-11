@@ -14,9 +14,6 @@ on:
   workflow_dispatch:
 
 env:
-  MUSER: ${{secrets.MARK_USER }} 
-  MPASS: ${{ secrets.MARK_PASS }}
-  MURL: ${{ secrets.MARK_URL }}
   MARKFILE: ${{ secrets.MARKFILE }}
   MARK_DEBUG: true
 
@@ -29,21 +26,20 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
       - name: Install Dependencies
         run: |
             sudo apt-get update
-            sudo apt-get install -y tree  # Install the 'tree' utility      
+            sudo apt-get install -y tree  # Install the 'tree' utility
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Make the script executable
         run: echo $(chmod 755 $GITHUB_WORKSPACE/bin/publish.sh)
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Execute the builscript
         run: $GITHUB_WORKSPACE/bin/publish.sh ${MUSER} ${MPASS} ${MURL}
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "------- Actions DONE -------"
