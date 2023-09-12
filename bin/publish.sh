@@ -32,7 +32,7 @@ function installMark(){
 
 function publishMd(){
   echo "Search for files in: $(pwd)"
-  find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${MARK_BIN} --config .markfile -f {} \;
+  find "$(pwd)" -name "*.md" -path "*src/202*" -exec "bin/mark --debug --config .markfile -f" {} \;
 
   #echo $(mark --config ${MARKFILE} -f ${GITHUB_WORKSPACE}/src/*.md)
 }
