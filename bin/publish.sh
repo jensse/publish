@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 marktag="9.9.0"
 MARK_BIN="./bin/mark"
-MARK_CONF=".markfile"
 
 
 function summary(){
@@ -19,9 +18,9 @@ function summary(){
 # If markfile dont exist, create one and sett variable to this.
 function createMarkfileIfNotExist (){
     echo "Create .markfile"
-    touch ${MARK_CONF}
-    chmod 700 ${MARK_CONF}
-    echo ${MARKFILE} > ${MARK_CONF}
+    touch .markfile
+    chmod 700 .markfile
+    echo ${MARKFILE} > .markfile
 }
 
 # Test if mark is installed, if not: install mark
@@ -33,7 +32,7 @@ function installMark(){
 
 function publishMd(){
   echo "Search for files in: $(pwd)"
-  find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${MARK_BIN} --config ${MARK_CONF} -f {} \;
+  find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${MARK_BIN} --config .markfile -f {} \;
 
   #echo $(mark --config ${MARKFILE} -f ${GITHUB_WORKSPACE}/src/*.md)
 }
