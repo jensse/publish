@@ -27,7 +27,7 @@ function createMarkfileIfNotExist (){
 function installMark(){
     echo "Install mark"
     wget https://github.com/kovetskiy/mark/releases/download/9.9.0/mark_Linux_x86_64.tar.gz
-    tar -xzvf mark_Linux_x86_64.tar.gz -C bin/
+    tar -xzvf mark_Linux_x86_64.tar.gz -C ${HOME}/bin/
 }
 
 function publishMd(){
