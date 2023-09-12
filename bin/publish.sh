@@ -32,7 +32,7 @@ function installMark(){
 
 function publishMd(){
 
-  mark --dry-run -debug --config ~/.markfile -f ${GITHUB_WORKSPACE}/src/2023/*/*/*.md
+  ${GITHUB_WORKSPACE}/bin/mark --dry-run -debug --config ~/.markfile -f ${GITHUB_WORKSPACE}/src/2023/*/*/*.md
   #find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${GITHUB_WORKSPACE}/bin/mark --debug --config ${GITHUB_WORKSPACE}/.markfile --f {} \;
 }
 
