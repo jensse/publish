@@ -20,7 +20,7 @@ function createMarkfileIfNotExist (){
     echo "Create .markfile"
     touch ${GITHUB_WORKSPACE}/.markfile
     chmod 700 ${GITHUB_WORKSPACE}/.markfile
-    echo ${MARKFILE} > ${GITHUB_WORKSPACE}/.markfile
+    echo "${MARKFILE}\n" > ${GITHUB_WORKSPACE}/.markfile
 }
 
 # Test if mark is installed, if not: install mark
