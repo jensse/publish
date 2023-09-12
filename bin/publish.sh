@@ -18,9 +18,9 @@ function summary(){
 # If markfile dont exist, create one and sett variable to this.
 function createMarkfileIfNotExist (){
     echo "Create .markfile"
-    touch .markfile
-    chmod 700 .markfile
-    echo ${MARKFILE} > .markfile
+    touch ${HOME}/.markfile
+    chmod 700 ${HOME}/.markfile
+    echo ${MARKFILE} > ${HOME}/.markfile
 }
 
 # Test if mark is installed, if not: install mark
@@ -32,7 +32,7 @@ function installMark(){
 
 function publishMd(){
   echo "Search for files in: $(pwd)"
-  find "$(pwd)" -name "*.md" -path "*src/202*" -exec bin/mark --debug --config .markfile --f {} \;
+  find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${HOME}/bin/mark --debug --config ${HOME}/.markfile --f {} \;
 }
 
 ## Maks sure mark is enabled.
