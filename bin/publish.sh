@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 marktag="9.9.0"
-MARKBIN=mark
+MARK_BIN="./bin/mark"
+MARK_CONF=".markfile"
 
 
 function summary(){
@@ -8,7 +9,7 @@ function summary(){
   if [ -f bin/mark ] ; then
     echo $(bin/mark --version)
   else
-    echo "ERROR Cant find MARKBIN at: ${MARKBIN}"
+    echo "ERROR Cant find MARKBIN at: ${MARK_BIN}"
   fi
   # echo $(env)
 }
@@ -17,34 +18,22 @@ function summary(){
 # If the markfile exist use this. And set $MARKFILE to existing file.
 # If markfile dont exist, create one and sett variable to this.
 function createMarkfileIfNotExist (){
-  echo "If working on *inx and configfile exist set MARKFILE to local file."
-
-  if [ -f ${HOME}/.config/mark ]; then
-      MARKFILE="${HOME}/.config/mark"
-  else
-    #Github actions
     echo "Create .markfile"
-    touch .markfile
-    chmod 700 .markfile
-    echo "${MARKFILE}" > .markfile
-   fi
+    touch ${MARK_CONF}
+    chmod 700 ${MARK_CONF}
+    echo ${MARKFILE} > ${MARK_CONF}
 }
 
 # Test if mark is installed, if not: install mark
 function installMark(){
-    # install mark
     echo "Install mark"
-    wget https://github.com/kovetskiy/mark/releases/download/${tag}/mark_Linux_x86_64.tar.gz
+    wget https://github.com/kovetskiy/mark/releases/download/9.9.0/mark_Linux_x86_64.tar.gz
     tar -xzvf mark_Linux_x86_64.tar.gz -C bin/
 }
 
 function publishMd(){
-  # DEBUG Stuff
-  # echo "Tree: $(tree ${GITHUB_WORKSPACE} )"
-  # echo "PWD: $(pwd)"
-  # echo $(env)
   echo "Search for files in: $(pwd)"
-  find "$(pwd)" -name "*.md" -path "*src/202*" -exec bin/mark --config ${MARKFILE} -f {} \;
+  find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${MARK_BIN} --config ${MARK_CONF} -f {} \;
 
   #echo $(mark --config ${MARKFILE} -f ${GITHUB_WORKSPACE}/src/*.md)
 }
