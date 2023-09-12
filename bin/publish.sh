@@ -21,7 +21,7 @@ function createMarkfileIfNotExist (){
     touch ${GITHUB_WORKSPACE}/.markfile
     chmod 700 ${GITHUB_WORKSPACE}/.markfile
     echo "${MARKFILE}" > ${GITHUB_WORKSPACE}/.markfile
-    cat ${GITHUB_WORKSPACE}/.markfile | echo
+    echo $(cat ${GITHUB_WORKSPACE}/.markfile)
 }
 
 # Test if mark is installed, if not: install mark
