@@ -32,9 +32,9 @@ function installMark(){
 }
 
 function publishMd(){
-
-  ${GITHUB_WORKSPACE}/bin/mark -debug --config ${GITHUB_WORKSPACE}/.markfile -f ${GITHUB_WORKSPACE}/src/2023/*/*/*.md
-  #find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${GITHUB_WORKSPACE}/bin/mark --debug --config ${GITHUB_WORKSPACE}/.markfile --f {} \;
+  find ${GITHUB_WORKSPACE}/src -mindepth 4 -name "*.md"  -exec echo "mark --dry-run -f " "{} \;
+  # ${GITHUB_WORKSPACE}/bin/mark -debug --config ${GITHUB_WORKSPACE}/.markfile -f ${GITHUB_WORKSPACE}/src/2023/*/*/*.md
+  # find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${GITHUB_WORKSPACE}/bin/mark --debug --config ${GITHUB_WORKSPACE}/.markfile --f {} \;
 }
 
 ## Maks sure mark is enabled.
