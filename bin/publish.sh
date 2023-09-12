@@ -5,8 +5,8 @@ MARKBIN=mark
 
 function summary(){
   echo "Summary: installing mark version; ${1} testing..."
-  if [ -f ${MARKBIN} ] ; then
-    echo $(${MARKBIN} --version)
+  if [ -f bin/mark ] ; then
+    echo $(bin/mark --version)
   else
     echo "ERROR Cant find MARKBIN at: ${MARKBIN}"
   fi
@@ -23,7 +23,7 @@ function createMarkfileIfNotExist (){
       MARKFILE="${HOME}/.config/mark"
   else
     #Github actions
-    echo "Create markfile"
+    echo "Create .markfile"
     touch .markfile
     chmod 700 .markfile
     echo "${MARKFILE}" > .markfile
@@ -49,7 +49,7 @@ function publishMd(){
   # echo "PWD: $(pwd)"
   # echo $(env)
   echo "Search for files in: $(pwd)"
-  find "$(pwd)" -name "*.md" -path "*src/202*" -exec ${MARKBIN} --config ${MARKFILE} -f {} \;
+  find "$(pwd)" -name "*.md" -path "*src/202*" -exec bin/mark --config ${MARKFILE} -f {} \;
 
   #echo $(mark --config ${MARKFILE} -f ${GITHUB_WORKSPACE}/src/*.md)
 }
