@@ -36,8 +36,6 @@ function installMark(){
     echo "Install mark"
     wget https://github.com/kovetskiy/mark/releases/download/${tag}/mark_Linux_x86_64.tar.gz
     tar -xzvf mark_Linux_x86_64.tar.gz -C bin/
-  fi
-
 }
 
 function publishMd(){
