@@ -28,19 +28,19 @@ function createMarkfileIfNotExist (){
    fi
 }
 
+# Test if mark is installed, if not: install mark
 function installMark(){
   echo "Install mark if dont exist"
   tag=${1}
-  if [ -f "bin/mark"]l; then
-    echo "bin/mark, exist"
+  if [ -f "bin/mark"]; then
+    echo "bin/mark, exist; Setting alias"
     alias mark="bin/mark"
-    exit 0;
 
   elif [[ $(mark --version) == "mark version 9*" ]]; then
-    echo "Mark is installed locally"
-    GITHUB_WORKSPACE=$(pwd)
+    echo "Mark is installed locally, and on path"
+
   else
-    #Install mark
+    echo "no mark installed; installing and setting alais for excecution"
     wget https://github.com/kovetskiy/mark/releases/download/${tag}/mark_Linux_x86_64.tar.gz
     tar -xzvf mark_Linux_x86_64.tar.gz -C bin/
     chmod 755 bin/mark
@@ -59,7 +59,11 @@ function publishMd(){
   #echo $(mark --config ${MARKFILE} -f ${GITHUB_WORKSPACE}/src/*.md)
 }
 
+## Maks sure mark is enabled.
 installMark ${marktag}
+## Create a configfile i non exist.
 createMarkfileIfNotExist
+## Status before running.
 summary ${marktag}
+## The actuall work goes here
 publishMd
