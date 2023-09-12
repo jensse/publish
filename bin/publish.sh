@@ -32,13 +32,10 @@ function createMarkfileIfNotExist (){
 
 # Test if mark is installed, if not: install mark
 function installMark(){
-  echo "Install mark if dont exist"
-  if [ ! type "mark" > /dev/null ]; then
     # install mark
-    echo "Mark not installed; installing and setting alais for excecution"
+    echo "Install mark"
     wget https://github.com/kovetskiy/mark/releases/download/${tag}/mark_Linux_x86_64.tar.gz
     tar -xzvf mark_Linux_x86_64.tar.gz -C bin/
-    PATH=bin:${PATH}
   fi
 
 }
